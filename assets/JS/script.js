@@ -13,9 +13,9 @@ let generatePassword = function() {
  let passInfo = "";
  const passChars = [];
 //Ask to input a numerical value for the password
- let characterAmount = prompt("Enter the number of characters you would like for your password.");
+ let characterAmount = prompt("Enter the number of characters you would like for your password. Note: it should be between 6-10");
 //Ask user if fthey want numerical values in their password.
- if (characterAmount >= 6 && characterAmount < 10) {
+ if (characterAmount >= 6 && characterAmount < 11) {
    const getIntger = confirm("Would you like to add numbers?");
    if (getIntger) {
      passInfo += passOpt.num;
