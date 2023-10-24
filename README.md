@@ -21,6 +21,8 @@ Refer to the repo for licenses.
 
 ## screenshots of the webpage
 
+![Alt text](<deployed-webpage.png>)
 
+## Webpage link 
 
-## Webpage link
+https://dannysaravia001.github.io/Password-Generator/
