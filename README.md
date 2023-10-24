@@ -21,7 +21,7 @@ Refer to the repo for licenses.
 
 ## screenshots of the webpage
 
-![Alt text](<deployed-webpage.png>)
+![Alt text](<./assets/deployed-webpage.png>)
 
 ## Webpage link 
 
