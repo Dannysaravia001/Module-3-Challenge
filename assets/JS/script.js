@@ -1,62 +1,62 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//This code 'passOpt' adds all the necessary data to to generate a unique password
-const passOpt = {
+//This code 'passwordValues' adds all the data to to generate a unique password
+var passwordValues = {
 specialChar: "!@#$%&'()*+,^-./%&'()*+,^-./:;<=>?[]_`{~}|",
-lowerCase: "abcdefghijklmnopqrstuvwxyz",
-upperCase:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-num: "1234567890"
+lowerCaseLetter: "abcdefghijklmnopqrstuvwxyz",
+upperCaseLetter:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+randomNumber: "1234567890"
 }
 
-let generatePassword = function() {
- let passInfo = "";
+var generatePassword = function() {
+ var passInfo = "";
  const passChars = [];
 //Ask to input a numerical value for the password
  let characterAmount = prompt("Enter the number of characters you would like for your password. Note: it should be between 6-10");
 //Ask user if fthey want numerical values in their password.
  if (characterAmount >= 6 && characterAmount < 11) {
-   const getIntger = confirm("Would you like to add numbers?");
+   var getIntger = confirm("Would you like to add numbers?");
    if (getIntger) {
-     passInfo += passOpt.num;
-     passChars.push(getRandomChar(passOpt.num));
+     passInfo += passwordValues.num;
+     passChars.push(getRandomChar(passwordValues.num));
    };
  //ask if the user wants special characters.
-   const getSpecialCharacter = confirm("Would you like to add Special Characters?");
+   var getSpecialCharacter = confirm("Would you like to add Special Characters?");
    if (getSpecialCharacter) {
-     passInfo += passOpt.specialChar;
-     passChars.push(getRandomChar(passOpt.specialChar));
+    passInfo += passwordValues.specialChar;
+    acters.push(getRandomChar(passwordValues.specialChar));
    };
  //ask user if they want UPPER case letters
-   const getUpperCase = confirm("Would you like to add uppercase letters?");
+   var getUpperCaseLetter = confirm("Would you like to add uppercase letters?");
    if (getUpperCase) {
-     passInfo += passOpt.upperCase;
-     passChars.push(getRandomChar(passOpt.upperCase));
+    passInfo += passwordValues.upperCaseLetter;
+    passCharacters.push(getRandomChar(passwordValues.upperCaseLetter));
    };
  //Ask user if they LOWER case letters
-   const getLowerCase = confirm("Would you like to add lowercase letters?");
-   if (getLowerCase) {
-     passInfo += passOpt.lowerCase;
-     passChars.push(getRandomChar(passOpt.lowerCase));
+   var getlowerCaseLetter = confirm("Would you like to add lowercase letters?");
+   if (getlowerCaseLetter) {
+    passInfo += passwordValues.lowerCaseLetter;
+    passCharacters.push(getRandomChar(passwordValues.lowerCaseLetter));
    };
-    for (let i = passChars.length - 1; i > 0; i--) {
+    for (let i = passCharacters.length - 1; i > 0; i--) {
     const swapIndex = Math.floor(Math.random() * (i + 1));
-    const temp = passChars[i];
-    passChars[i] = passChars[swapIndex];
-    passChars[swapIndex] = temp;
+    const temp = passCharacters[i];
+    passCharacters[i] = passCharacters[swapIndex];
+    passCharacters[swapIndex] = temp;
   };
    
 
   if (!passInfo) {
-    // notify user needs to select at least one option
+  // notify user needs to select at least one option
     window.alert("You need to select at least one option!");
-    // return user back to their questions
+  // return user back to their questions
     return generatePassword();
   };
 
-   while (passChars.length < characterAmount) {
+   while (passCharacters.length < characterAmount) {
     // pick a random character from passInfo
-    passChars.push(getRandomChar(passInfo));
+    passCharacters.push(getRandomChar(passInfo));
    };
 
 
@@ -64,7 +64,7 @@ let generatePassword = function() {
      alert("You need to select at least one option! Please try again!");
      return generatePassword();
    };
-return passChars.join("");
+return passCharacters.join("");
 } else {
   // Alert the user if the provided length is invalid.
   alert("You need to provide a valid length!");
